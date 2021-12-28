@@ -20,6 +20,10 @@ student-canteen-mern created by GitHub Classroom (Group project at HTW Berlin)
   - `PUBLIC_VAPID_KEY` - Private vapid key to enable push notifications
   - `PUSH_EMAIL` - Email address for push notifications
 
+## View it on Heroku
+
+Go to: https://student-canteen.herokuapp.com/
+
 ## Sources
 
 - Image / icon on `LoginComponent.js` and `RegisterComponent.js`:<br> https://www.clipartmax.com/middle/m2i8m2K9K9d3N4G6_how-to-change-your-account-password-password-icon-png-green/ <br>
