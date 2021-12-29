@@ -1,11 +1,10 @@
 import React from 'react';
 import Meal from './Meal';
 import { Container } from 'reactstrap';
-import Loader from 'react-loader-spinner';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { TryOutlined } from '@mui/icons-material';
 import { Snackbar } from '@mui/material';
+import { missingResourcesInfo } from '../styles/styles';
 
 class Home extends React.Component {
   constructor(props) {
@@ -29,8 +28,7 @@ class Home extends React.Component {
       }
       return response;
     }
-
-    let mealsRoute = `https://openmensa.org/api/v2/canteens/${this.props.user.canteen}/days/${date}/meals`;
+    const mealsRoute = `https://openmensa.org/api/v2/canteens/${this.props.user.canteen}/days/${date}/meals`;
     fetch(mealsRoute, {
       method: 'GET',
       headers: {
@@ -61,8 +59,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    let today = new Date();
-    let mondayDate = today.setDate(today.getDate() - today.getDay() + 1);
+    const today = new Date();
     for (let i = 0; i < 5; i++) {
       this.fetchMeals(i, today.toLocaleDateString('en-CA'));
       today.setDate(today.getDate() + 1);
@@ -137,7 +134,7 @@ class Home extends React.Component {
         this.state.meals[4] != null ? (
           this.state.meals[0] &&
           !(this.state.today === 5 || this.state.today === -1) &&
-          !this.state.meals[this.state.today] == '' ? (
+          this.state.meals[this.state.today] !== '' ? (
             this.state.meals[this.state.today].map(meal => {
               if (this.props.user.preferences === 'alles') {
                 return (
@@ -203,9 +200,25 @@ class Home extends React.Component {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              textAlign: 'center',
             }}
           >
-            <Loader type="ThreeDots" color="#87F6C1" height={100} width={100} />
+            <div>
+              <img
+                src="hungry.png"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  margin: 0,
+                  marginBottom: 10,
+                }}
+                id="icon"
+                alt="Hungry person"
+              />
+              <h3 style={missingResourcesInfo}>
+                Die Mensa hat leider aktuell nichts zu essen
+              </h3>
+            </div>
           </Container>
         )}
         {typeof this.props.openSnackbar !== 'boolean' ? (

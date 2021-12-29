@@ -30,3 +30,6 @@ Go to: https://student-canteen.herokuapp.com/
 - `LoginComponent.js` and `RegisterComponent.js` design: <br> https://bootsnipp.com/snippets/dldxB <br>
 - Distance calculation in MensaWahl.js <br> https://stackoverflow.com/questions/18883601/function-to-calculate-distance-between-two-coordinates <br>
 - Image of a coffee mug: <br> https://www.google.de/url?sa=i&url=https%3A%2F%2Ffreesvg.org%2Fcoffee-cup-silhouette&psig=AOvVaw0kQxFxA9T3ctImhZ6bO2-n&ust=1633551299252000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPjLu_iQtfMCFQAAAAAdAAAAABAD
+- Image on `PageNotFound.jsx` <br> https://www.vectorstock.com/royalty-free-vector/broken-link-icon-vector-23190091
+- Image on `MyMensa.jsx`: <br> https://www.pngegg.com/de/png-dkdsa
+- Image on `Home.jsx` (hungry person): <br> https://www.flaticon.com/free-icon/hunger_4799053?term=hungry&related_id=4799053
