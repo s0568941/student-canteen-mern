@@ -2,8 +2,8 @@ import React from 'react';
 import MensaWahl from './MensaWahl';
 import SearchIcon from '@material-ui/icons/Search';
 import { Container } from 'reactstrap';
-import Loader from 'react-loader-spinner';
 import { Snackbar } from '@mui/material';
+import { missingResourcesInfo } from '../styles/styles';
 
 class MyMensa extends React.Component {
   constructor(props) {
@@ -232,14 +232,21 @@ class MyMensa extends React.Component {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                textAlign: 'center',
               }}
             >
-              <Loader
-                type="ThreeDots"
-                color="#87F6C1"
-                height={100}
-                width={100}
-              />
+              <div>
+                <img
+                  src="location.png"
+                  style={{ width: 200, height: 200, margin: 10 }}
+                  id="icon"
+                  alt="Location"
+                />
+                <h3 style={missingResourcesInfo}>
+                  Bist du dir sicher, dass du mir deinen Standort nicht verraten
+                  willst?
+                </h3>
+              </div>
             </Container>
           )}
           {typeof this.props.openSnackbar !== 'boolean' ? (
